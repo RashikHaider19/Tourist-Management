@@ -22,6 +22,12 @@ mongoose.connect(MONGO_URI, {
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
+  // Import auth routes
+const authRoutes = require('./routes/authRoutes');
+
+// Mount the auth routes
+app.use('/api/auth', authRoutes);
+
 // Basic route for testing
 app.get('/', (req, res) => {
   res.send('Backend is running!');
