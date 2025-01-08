@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const userRoutes = require('./routes/userRoutes');
+const packageRoutes = require('./routes/packageRoutes');
 
 const app = express();
 
@@ -28,6 +29,7 @@ mongoose
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/packages', packageRoutes);
 
 // Test route
 app.get('/', (req, res) => {
