@@ -5,23 +5,23 @@ const userSchema = new mongoose.Schema(
   {
     role: {
       type: String,
-      enum: ['customer', 'admin'],
-      default: 'customer',
+      enum: ['admin', 'customer'],
+      default: 'customer'
     },
     name: {
       type: String,
-      required: true,
+      required: true
     },
     email: {
       type: String,
       required: true,
-      unique: true,
+      unique: true
     },
     password: {
       type: String,
-      required: true,
-    },
-    // Add any additional fields here, e.g., travelHistory, healthInfo, etc.
+      required: true
+    }
+    // Add more fields if needed
   },
   { timestamps: true }
 );
