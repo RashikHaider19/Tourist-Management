@@ -1,16 +1,16 @@
 // user-client/src/pages/PaymentPage.jsx
 import {
-    CardElement,
-    Elements,
-    useElements,
-    useStripe
+  CardElement,
+  Elements,
+  useElements,
+  useStripe
 } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 import API from '../services/api';
 
 // Load the publishable key from an .env or just paste your test key
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY || 'pk_test_123ABC');
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY || 'pk_test_51Qf7wBEjiEb3zN06mfnq1D5hfu0FCjzJlBLbjULJo64aNoMhAhPew9HTdShSmjTw286WPeqnFa2MxJECyLWZIg4E001VT0FJGH');
 
 function PaymentPageWrapper() {
   // For demonstration, let's charge $10 (which is 1000 cents)

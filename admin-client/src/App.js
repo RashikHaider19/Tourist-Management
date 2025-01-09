@@ -40,7 +40,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 // Import your admin pages
 import AdminDashboard from './pages/AdminDashboard';
 import AdminLogin from './pages/AdminLogin';
-import ManageBookings from './pages/ManageBookings'; // if you have it
+//import ManageBookings from './pages/ManageBookings'; // if you have it
 import ManagePackages from './pages/ManagePackages';
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
         <Route path="/manage-packages" element={<ManagePackages />} />
 
         {/* (Optional) Manage bookings */}
-        <Route path="/manage-bookings" element={<ManageBookings />} />
+        {/* <Route path="/manage-bookings" element={<ManageBookings />} /> */}
       </Routes>
     </Router>
   );
