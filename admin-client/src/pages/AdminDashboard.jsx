@@ -1,27 +1,29 @@
-// admin-client/src/pages/AdminDashboard.jsx
-import React, { useEffect, useState } from 'react';
-import API from '../services/api';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function AdminDashboard() {
-  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await API.get('/api/admin/dashboard');
-        setMessage(res.data.message);
-      } catch (error) {
-        setMessage('Error fetching dashboard data');
-      }
-    };
-    fetchData();
-  }, []);
+  const handleLogout = () => {
+    // Remove the admin token from localStorage
+    localStorage.removeItem('adminToken');
+    // Redirect to admin login page (assuming path="/")
+    navigate('/');
+  };
 
   return (
-    <div>
-      <h2>Admin Dashboard</h2>
-      <p>{message}</p>
-      {/* Additional admin functionality here */}
+    <div style={{ padding: '20px' }}>
+      <h1>Admin Dashboard</h1>
+      <p>Welcome! You are logged in as an admin.</p>
+      <button onClick={handleLogout}>Logout</button>
+
+      <hr />
+
+      {/* Add admin-specific links or content here */}
+      <button onClick={() => navigate('/manage-packages')}>Manage Packages</button>
+      <button onClick={() => navigate('/manage-bookings')} style={{ marginLeft: '10px' }}>
+        Manage Bookings
+      </button>
     </div>
   );
 }
